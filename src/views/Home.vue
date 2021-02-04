@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <HelloWorld :msg="helloMessage"/>
   </div>
 </template>
 
@@ -12,6 +12,13 @@ import HelloWorld from '@/components/HelloWorld.vue' // @ is an alias to /src
 @Component({
   components: {
     HelloWorld
+  },
+  computed: {
+    helloMessage: {
+      get (): string {
+        return this.$store.state.helloMessage
+      }
+    }
   }
 })
 export default class Home extends Vue {}
