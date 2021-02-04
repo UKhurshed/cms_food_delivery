@@ -1,52 +1,40 @@
 <template>
-  <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-    </v-app-bar>
-
-    <v-main>
-      <HelloWorld/>
-    </v-main>
-  </v-app>
+  <div id="app">
+    <div class="post">
+      <p> {{helloMessage}}</p>
+    </div>
+  </div>
 </template>
+
+<!-- <HelloWorld :msg="helloMessage"></HelloWorld> -->
 
 <script lang="ts">
 import Vue from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
 
 export default Vue.extend({
   name: 'App',
-
-  components: {
-    HelloWorld
-  },
-
-  data: () => ({
-    //
-  })
+  computed: {
+    helloMessage: {
+      get () {
+        console.log('Store data: ' + 'this.$store.helloMessage')
+        return this.$store.state.helloMessage
+      }
+    }
+  }
 })
 </script>
+
+<style>
+#app{
+  text-align: center;
+  color: #2c3e50;
+  margin: 60px auto;
+  width: 400px;
+}
+
+.post{
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+</style>

@@ -1,17 +1,16 @@
 import Vue from 'vue'
-import Vuex from 'vuex'
+import Vuex, { StoreOptions } from 'vuex'
+import { HelloState } from '@/store/types'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
+const store: StoreOptions<HelloState> = {
   state: {
     helloMessage: 'Hello From VueX'
   },
-  mutations: {
-
-  },
-  actions: {
-  },
   modules: {
+
   }
-})
+}
+
+export default new Vuex.Store(store)
