@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-app-bar app color="yellow lighten-1">
-      <v-toolbar-title @click="toHome">Title</v-toolbar-title>
+      <v-toolbar-title @click="toHome">Paprika</v-toolbar-title>
       <v-spacer/>
       <v-btn @click="toRegister" text rounded>Register</v-btn>
       <v-btn text rounded>About</v-btn>
@@ -11,14 +11,14 @@
       <v-card width="400" class="mx-auto mt-9">
         <v-card-title>Login</v-card-title>
         <v-card-text>
-          <v-text-field label="Username" prepend-icon="mdi-account-circle"/>
+          <v-text-field label="Email" prepend-icon="mdi-account-circle"/>
           <v-text-field @click:append="showPassword = ! showPassword" label="Password" :type="showPassword ? 'text' : 'password'"
                         prepend-icon="mdi-lock"
                         :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"/>
         </v-card-text>
         <v-divider/>
         <v-card-actions>
-          <v-btn block color="yellow darken-1" class="mx-auto">Login</v-btn>
+          <v-btn @click="toHome" block color="yellow darken-1" class="mx-auto">Login</v-btn>
         </v-card-actions>
       </v-card>
     </v-content>

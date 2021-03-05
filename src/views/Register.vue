@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-app-bar app color="yellow lighten-1">
-      <v-toolbar-title @click="toHome">Title</v-toolbar-title>
+      <v-toolbar-title @click="toHome">Paprika</v-toolbar-title>
     </v-app-bar>
     <v-content>
       <v-card width="400" class="mx-auto mt-10">
